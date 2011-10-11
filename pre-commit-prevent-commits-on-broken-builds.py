@@ -27,7 +27,7 @@ def fetch_tc_status():
     req.add_header('Accept', 'application/json')
     try:
         response = urllib2.urlopen(req).read()
-        status = eval(response)['build'][0]['status'] == 'SUCCESS'
+        status = eval(response)['build'][0]['status'] != 'FAILURE'
         return status
     except Exception, e:
         sys.stderr.write('Failed to get TC status: {0}\n'.format(e))
