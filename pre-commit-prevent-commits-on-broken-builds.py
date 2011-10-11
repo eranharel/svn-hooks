@@ -3,7 +3,7 @@ import sys, os, string
 import urllib2
 
 SVNLOOK='/usr/bin/svnlook'
-TC_BUILD_STATUS_URL='http://tc1.nydc1.outbrain.com:8111/guestAuth/app/rest/builds?locator=buildType:bt10,count:1'
+TC_BUILD_STATUS_URL='http://<tc-server>:8111/guestAuth/app/rest/builds?locator=buildType:<build-type>,count:1'
 
 def main(repos, txn):
     log_cmd = '%s log -t "%s" "%s"' % (SVNLOOK, txn, repos)
